@@ -15,7 +15,8 @@ dotfiles/
 │   ├── Microsoft.PowerShell_profile.ps1
 │   └── scripts/
 │       ├── Get-GitStatus.ps1            # Batch Git repository status checker
-│       └── Export-GitHubIssueTree.ps1   # GitHub issue & sub-issue exporter
+│       ├── Export-GitHubIssueTree.ps1   # GitHub issue & sub-issue exporter
+│       └── Find-Text.ps1                # Dependency-free text finder
 ├── .gitattributes               # Line-ending normalization (LF vs CRLF)
 └── .gitignore                   # Repo-level ignore rules
 ```
@@ -70,6 +71,7 @@ Follow the final instructions displayed by the script to complete the setup and 
 
 - `GitStatus [path] [-All] [-Help]`: Scans subdirectories for uncommitted Git changes
 - `Export-GitHubIssueTree -IssueNumber N [-OutputPath file]`: Exports an issue tree to JSON. Defaults to `.temp\issue-N.json` (requires `gh`)
+- `Find-Text "query" [path] [-Context N] [-MaxResults N] [-ExcludeDirectory names]`: Context-aware search with directory exclusions. **Not intended for large directories.**
 - `Edit-Profile` / `Reload-Profile`: Quick access to edit or reload the PowerShell profile.
 - `ll`: Runs `Get-ChildItem -Force`.
 

@@ -22,6 +22,12 @@ function Export-GitHubIssueTree {
     & $script @args
 }
 
+function Find-Text {
+    $script = "$Dotfiles\scripts\Find-Text.ps1"
+    if (-not (Test-Path $script)) { throw "Missing: $script" }
+    & $script @args
+}
+
 # Line prefix
 function prompt {
     $venv = if ($env:VIRTUAL_ENV) {
